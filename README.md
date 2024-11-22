@@ -22,5 +22,3 @@ visit http://localhost:8080/pkg/scrapping/
 ```
 
 - ![alt text](image.png)
-- [![Watch the video]](scraper-tool-demo.mp4)
-
