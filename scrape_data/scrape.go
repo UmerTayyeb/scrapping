@@ -1,3 +1,7 @@
+// Package scrape handles scraping-related tasks.
+// It first scrapes articles from the main page of the main URL,
+// then scrapes data from each article and calls Insert_article_metadata
+// to store the data in the database.
 package scrape
 
 import (
@@ -16,6 +20,7 @@ import (
 
 // Scrape_articles scrapes articles from a specified URL
 // and inserts metadata into the database.
+// URL and allowed domains are loaded from environment variables (TARGET_URL, ALLOWED_DOMAINS).
 func Scrape_articles() {
 	var metadata models.Article_meta_data
 
@@ -127,6 +132,8 @@ func Scrape_articles() {
 }
 
 // isArticleLink checks if the provided link is an article link.
+// Input: A string link representing the URL.
+// Output: true if the link matches the article pattern, false otherwise.
 func isArticleLink(link string) bool {
 	if len(link) > 0 && containsSubstring(link, "/news/articles/") {
 		return true

@@ -1,3 +1,8 @@
+// The main package orchestrates the user interaction and main functionality of the application,
+// including scraping articles from the web or retrieving them from the MongoDB database.
+// It calls the connect func to connect to the MongoDB database
+// and prompts the user to either scrape new articles or retrieve existing articles.
+// It uses the scrape and mongodb packages to perform these tasks.
 package main
 
 import (
@@ -8,6 +13,9 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
+// It handles user interaction and executes the two main functionalities: scraping articles or
+// retrieving them from the database.
+// User input (1 or 2) to decide between scraping or retrieving articles.
 func main() {
 	// Start of the program
 	fmt.Println("starting...")

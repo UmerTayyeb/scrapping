@@ -1,3 +1,5 @@
+// Package mongodb manages database-related tasks such as connecting to the database,
+// disconnecting, inserting articles and retrieving articles.
 package mongodb
 
 import (
@@ -16,6 +18,7 @@ var articleCollection *mongo.Collection
 
 // Connect_db connects to MongoDB using the provided URL
 // and sets the articleCollection variable for future operations.
+// Returns nil on success or an error if the connection fails.
 func Connect_db() error {
 	fmt.Println("Connecting DB")
 	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
@@ -43,6 +46,7 @@ func Disconnect_db() {
 }
 
 // Insert_article_metadata inserts article metadata into the MongoDB collection.
+// Input: A struct containing the article’s metadata (Title, DatePublished, ArticleURL, Content, ScrapedAt).
 func Insert_article_metadata(metadata models.Article_meta_data) {
 	var existingArticle bson.M
 
@@ -75,6 +79,7 @@ func Insert_article_metadata(metadata models.Article_meta_data) {
 }
 
 // Retrieve_articles retrieves articles based on a filter from the database.
+// Input: A MongoDB filter (bson.M) for querying specific articles
 func Retrieve_articles(filter bson.M) ([]models.Article_meta_data, error) {
 	// Set up an empty slice to hold the articles
 	var articles []models.Article_meta_data
