@@ -27,7 +27,6 @@ func Connect_db() error {
 		log.Fatal(err)
 		return err
 	}
-	// defer client.Disconnect(context.Background())
 
 	// Set up the article collection for querying and inserting articles
 	articleCollection = client.Database("newsdb").Collection("articles")
