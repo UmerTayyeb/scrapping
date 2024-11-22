@@ -22,4 +22,4 @@ visit http://localhost:8080/pkg/scrapping/
 ```
 
 - ![alt text](image.png)
-<video controls src="scraper-tool-demo.mp4" title="Title"></video>
+- <video controls src="scraper-tool-demo.mp4" title="Title"></video>
