@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://localhost:8080/pkg/scrapping/Mongodb/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>mongodb - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="./mongodb - The Go Programming Language_files/style.css">
+
+
+<script>window.initFuncs = [];</script>
+<script src="./mongodb - The Go Programming Language_files/jquery.js" defer=""></script>
+
+
+
+<script>var goVersion = "go1.12.12";</script>
+<script src="./mongodb - The Go Programming Language_files/godocs.js" defer=""></script>
+<link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous"><link rel="stylesheet" href="./mongodb - The Go Programming Language_files/css2"></head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide" tabindex="-1" style="outline: 0px;">
+<div class="container">
+
+
+  <h1>
+    Package mongodb
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "scrapping/Mongodb"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="http://localhost:8080/pkg/scrapping/Mongodb/#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="http://localhost:8080/pkg/scrapping/Mongodb/#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package mongodb manages database-related tasks such as connecting to the database,
+disconnecting, inserting articles and retrieving articles.
+</p>
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="http://localhost:8080/pkg/scrapping/Mongodb/#Connect_db">func Connect_db() error</a></dd>
+			
+				
+				<dd><a href="http://localhost:8080/pkg/scrapping/Mongodb/#Disconnect_db">func Disconnect_db()</a></dd>
+			
+				
+				<dd><a href="http://localhost:8080/pkg/scrapping/Mongodb/#Insert_article_metadata">func Insert_article_metadata(metadata models.Article_meta_data)</a></dd>
+			
+				
+				<dd><a href="http://localhost:8080/pkg/scrapping/Mongodb/#Retrieve_articles">func Retrieve_articles(filter bson.M) ([]models.Article_meta_data, error)</a></dd>
+			
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:8080/src/scrapping/Mongodb/DB.go">DB.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="Connect_db">func <a href="http://localhost:8080/src/scrapping/Mongodb/DB.go?s=569:592#L12">Connect_db</a>
+				<a class="permalink" href="http://localhost:8080/pkg/scrapping/Mongodb/#Connect_db">¶</a>
+				
+				
+			</h2>
+			<pre>func Connect_db() <a href="http://localhost:8080/pkg/builtin/#error">error</a></pre>
+			<p>
+Connect_db connects to MongoDB using the provided URL
+and sets the articleCollection variable for future operations.
+Returns nil on success or an error if the connection fails.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Disconnect_db">func <a href="http://localhost:8080/src/scrapping/Mongodb/DB.go?s=1093:1113#L29">Disconnect_db</a>
+				<a class="permalink" href="http://localhost:8080/pkg/scrapping/Mongodb/#Disconnect_db">¶</a>
+				
+				
+			</h2>
+			<pre>func Disconnect_db()</pre>
+			<p>
+Disconnect_db disconnects from MongoDB.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Insert_article_metadata">func <a href="http://localhost:8080/src/scrapping/Mongodb/DB.go?s=1527:1590#L40">Insert_article_metadata</a>
+				<a class="permalink" href="http://localhost:8080/pkg/scrapping/Mongodb/#Insert_article_metadata">¶</a>
+				
+				
+			</h2>
+			<pre>func Insert_article_metadata(metadata <a href="http://localhost:8080/pkg/scrapping/models/">models</a>.<a href="http://localhost:8080/pkg/scrapping/models/#Article_meta_data">Article_meta_data</a>)</pre>
+			<p>
+Insert_article_metadata inserts article metadata into the MongoDB collection.
+Input: A struct containing the article’s metadata (Title, DatePublished, ArticleURL, Content, ScrapedAt).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Retrieve_articles">func <a href="http://localhost:8080/src/scrapping/Mongodb/DB.go?s=2834:2907#L73">Retrieve_articles</a>
+				<a class="permalink" href="http://localhost:8080/pkg/scrapping/Mongodb/#Retrieve_articles">¶</a>
+				
+				
+			</h2>
+			<pre>func Retrieve_articles(filter <a href="http://localhost:8080/pkg/go.mongodb.org/mongo-driver/bson/">bson</a>.<a href="http://localhost:8080/pkg/go.mongodb.org/mongo-driver/bson/#M">M</a>) ([]<a href="http://localhost:8080/pkg/scrapping/models/">models</a>.<a href="http://localhost:8080/pkg/scrapping/models/#Article_meta_data">Article_meta_data</a>, <a href="http://localhost:8080/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Retrieve_articles retrieves articles based on a filter from the database.
+Input: A MongoDB filter (bson.M) for querying specific articles
+</p>
+
+			
+			
+
+		
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.12.12.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:8080/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:8080/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
