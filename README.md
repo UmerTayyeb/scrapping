@@ -13,7 +13,7 @@ go run main.go
 
 # Project Documentation
 - Open file with name 'open this.html' in documentation
-- Or install for detailed documentation
+- Or follow for detailed documentation
 ```
 go get golang.org/x/tools/cmd/godoc
 go get github.com/natefinch/godocgo
