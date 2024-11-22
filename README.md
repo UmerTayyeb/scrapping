@@ -4,7 +4,14 @@
 # Pre requisites
 - go version 1.23.0
 
-# Project Overvies
+# Project Deployment
+
+```
+go mod tidy
+go run main.go
+```
+
+# Project Documentation
 - Open file with name 'open this.html' in documentation
 - Or install for detailed documentation
 ```
@@ -13,5 +20,5 @@ go get github.com/natefinch/godocgo
 godoc -http=:8080 
 visit http://localhost:8080/pkg/scrapping/
 ```
-                `
+
 - ![alt text](image.png)
