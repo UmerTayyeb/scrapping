@@ -7,10 +7,11 @@
 # Project Overvies
 - Open file with name 'open this.html' in documentation
 - Or install for detailed documentation
-
-            - ` go get golang.org/x/tools/cmd/godoc
-                go get github.com/natefinch/godocgo
-                godoc -http=:8080 
-                visit `http://localhost:8080/pkg/scrapping/`
+```
+go get golang.org/x/tools/cmd/godoc
+go get github.com/natefinch/godocgo
+godoc -http=:8080 
+visit http://localhost:8080/pkg/scrapping/
+```
                 `
 - ![alt text](image.png)
