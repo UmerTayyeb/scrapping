@@ -124,7 +124,7 @@ func Scrape_articles() {
 		metadata.Content = e.Text
 		metadata.ScrapedAt = time.Now() // Set the scrapedAt time here
 		fmt.Println("\nContent:\n", e.Text)
-		// go mongodb.Insert_article_metadata(metadata)
+
 		wg.Add(1) // Increment the counter for the new goroutine
 		go func(meta models.Article_meta_data) {
 			defer wg.Done() // Decrement the counter when the goroutine completes
