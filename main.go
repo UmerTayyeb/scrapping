@@ -37,7 +37,8 @@ func main() {
 	2: Get articles from DB`)
 
 	// Read the user input
-	fmt.Scanln(&input)
+	// fmt.Scanln(&input)
+	input = 1
 
 	switch input {
 	case 1:

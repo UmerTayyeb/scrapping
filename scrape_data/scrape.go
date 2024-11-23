@@ -12,6 +12,7 @@ import (
 	mongodb "scrapping/Mongodb"
 	"scrapping/models"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/gocolly/colly"
@@ -23,6 +24,8 @@ import (
 // URL and allowed domains are loaded from environment variables (TARGET_URL, ALLOWED_DOMAINS).
 func Scrape_articles() {
 	var metadata models.Article_meta_data
+
+	var wg sync.WaitGroup // Create a WaitGroup to synchronize goroutines
 
 	// Load environment variables from .env file
 	if err := godotenv.Load(); err != nil {
@@ -121,7 +124,12 @@ func Scrape_articles() {
 		metadata.Content = e.Text
 		metadata.ScrapedAt = time.Now() // Set the scrapedAt time here
 		fmt.Println("\nContent:\n", e.Text)
-		mongodb.Insert_article_metadata(metadata)
+		// go mongodb.Insert_article_metadata(metadata)
+		wg.Add(1) // Increment the counter for the new goroutine
+		go func(meta models.Article_meta_data) {
+			defer wg.Done() // Decrement the counter when the goroutine completes
+			mongodb.Insert_article_metadata(meta)
+		}(metadata)
 	})
 
 	// Start scraping from the main page
@@ -129,6 +137,7 @@ func Scrape_articles() {
 	if err := mainPageCollector.Visit(mainURL); err != nil {
 		log.Fatalf("Failed to visit main page %s: %v\n", mainURL, err)
 	}
+	wg.Wait() // Wait for goroutine to finsh
 }
 
 // isArticleLink checks if the provided link is an article link.
